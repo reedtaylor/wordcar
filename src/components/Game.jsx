@@ -140,9 +140,9 @@ const Game = () => {
     const handleKeyDown = (e) => {
       if (gameOver || !gameStarted) return;
 
-      if (e.key === 'ArrowLeft') {
+      if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
         setCarLane(prev => Math.max(0, prev - 1));
-      } else if (e.key === 'ArrowRight') {
+      } else if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {
         setCarLane(prev => Math.min(2, prev + 1));
       }
     };
@@ -203,7 +203,7 @@ const Game = () => {
         <div className="start-screen">
           <h2>How to Play</h2>
           <ul>
-            <li>Use ← → arrow keys to move your car</li>
+            <li>Use ← → arrow keys or A/D keys to move your car</li>
             <li>Drive over letters to collect them</li>
             <li>Build valid words to score points</li>
             <li>Avoid creating letter sequences that cannot form any words</li>
@@ -275,7 +275,7 @@ const Game = () => {
       </div>
 
       <div className="controls-hint">
-        Use ← → arrow keys to move
+        Use ← → arrow keys or A/D keys to move
       </div>
     </div>
   );
